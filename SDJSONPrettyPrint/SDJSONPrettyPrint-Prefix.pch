@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SDJSONPrettyPrint' target in the 'SDJSONPrettyPrint' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
