@@ -9,8 +9,6 @@
 #import "SDJSONPrettyPrint.h"
 
 @implementation SDJSONPrettyPrint {
-    NSMutableSet *_traversedObjects;
-    NSUInteger _depth;
     NSString *_lastKey;
 }
 
@@ -121,18 +119,22 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
     return [[[self alloc] init] stringFromJSONObject: jsonObject];
 }
 
-- (id) init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (NSString*) stringFromJSONObject:(NSObject *)jsonObject
 {
-    _traversedObjects = [NSMutableSet new];
+    // Why do this?  NSJSONSerialization can write JSON very fast.  Way faster than I
+    // can.  It can do it so fast, I can delegate responsibility of ensuring the
+    // incoming JSON is valid to it, and it'll do the job at least 20x quicker than
+    // I will.  This means compared to the cost of including validation code in this
+    // project, and compared to the performance cost of including validation *logic*
+    // in this project, it's significantly cheaper to just use the 20x faster
+    // NSJSONSerialization serializer as a first-pass validation check to make sure
+    // the incoming JSON is sane.
+    
+    NSError *error = nil;
+    NSData *sanityCheck = [NSJSONSerialization dataWithJSONObject: jsonObject options: 0 error: &error];
+    if (sanityCheck == nil || error != nil) {
+        return nil;
+    }
     return [self objectTranslation: jsonObject depth: 0];
 }
 
@@ -141,10 +143,6 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
     NSString *basicDescription = SDJSONBasicObjectTranslation(object);
     if (basicDescription != nil) {
         return basicDescription;
-    } else {
-        if (![[self class] checkTraversedObjects: _traversedObjects forObject: object]) {
-            return nil;
-        }
     }
     
     if ([object isKindOfClass: [NSArray class]]) {
@@ -154,10 +152,8 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
             positionOnLine += _lastKey.length + 4;
         }
         
-        NSMutableSet *traversedObjects = [_traversedObjects mutableCopy];
-        NSString *oneLiner = [[self class] oneLineArrayTranslation: arrayObject positionOnLine:positionOnLine traversedObjects: traversedObjects];
+        NSString *oneLiner = [[self class] oneLineArrayTranslation: arrayObject positionOnLine:positionOnLine];
         if (oneLiner != nil) {
-            [_traversedObjects unionSet: traversedObjects];
             return oneLiner;
         }
         
@@ -218,7 +214,7 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
     return output;
 }
 
-+ (NSString*) oneLineArrayTranslation: (NSArray*) array positionOnLine: (NSUInteger) positionOnLine traversedObjects: (NSMutableSet*) traversedObjects
++ (NSString*) oneLineArrayTranslation: (NSArray*) array positionOnLine: (NSUInteger) positionOnLine
 {
     // First check that there aren't any objects
     for (id obj in array) {
@@ -234,10 +230,7 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
     for (id obj in array) {
         NSString *basicDescription = SDJSONBasicObjectTranslation(obj);
         if (basicDescription == nil && [obj isKindOfClass: [NSArray class]]) {
-            if (![self checkTraversedObjects: traversedObjects forObject: obj]) {
-                return nil;
-            }
-            basicDescription = [self oneLineArrayTranslation: obj positionOnLine: positionOnLine + [output length] traversedObjects: traversedObjects];
+            basicDescription = [self oneLineArrayTranslation: obj positionOnLine: positionOnLine + [output length]];
         }
         if (basicDescription == nil) {
             // Unsupported object or too long.
@@ -313,7 +306,7 @@ NS_INLINE void SDJSONAppendToDepth(NSUInteger depth, NSMutableString *output)
         NSUInteger positionOnLine = 2 * self.depth;
         positionOnLine += self.key.length + 4;
         
-        NSString *oneLiner = [SDJSONPrettyPrint oneLineArrayTranslation: (NSArray*) self.value positionOnLine:positionOnLine traversedObjects: [NSMutableSet new]];
+        NSString *oneLiner = [SDJSONPrettyPrint oneLineArrayTranslation: (NSArray*) self.value positionOnLine:positionOnLine];
         if (oneLiner != nil) {
             mask |= 1;
         } else {
