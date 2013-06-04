@@ -10,6 +10,15 @@
 		8B6E1670175C9FA70017F790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E166F175C9FA70017F790 /* Foundation.framework */; };
 		8B6E1675175C9FA70017F790 /* SDJSONPrettyPrint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B6E1674175C9FA70017F790 /* SDJSONPrettyPrint.h */; };
 		8B6E1677175C9FA70017F790 /* SDJSONPrettyPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1676175C9FA70017F790 /* SDJSONPrettyPrint.m */; };
+		8B6E1684175CD99C0017F790 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E1683175CD99C0017F790 /* SenTestingKit.framework */; };
+		8B6E1686175CD99C0017F790 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E1685175CD99C0017F790 /* UIKit.framework */; };
+		8B6E1687175CD99C0017F790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E166F175C9FA70017F790 /* Foundation.framework */; };
+		8B6E168D175CD99C0017F790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B6E168B175CD99C0017F790 /* InfoPlist.strings */; };
+		8B6E1690175CD99C0017F790 /* SDJSONPrettyPrintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E168F175CD99C0017F790 /* SDJSONPrettyPrintTests.m */; };
+		8B6E1695175CDAAD0017F790 /* SDJSONPrettyPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1676175C9FA70017F790 /* SDJSONPrettyPrint.m */; };
+		8B6E1697175CDF460017F790 /* NestedTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B6E1696175CDF460017F790 /* NestedTest.json */; };
+		8B754701175D8C33007B4FCC /* UnicodeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B754700175D8C33007B4FCC /* UnicodeTest.json */; };
+		8B754703175D907A007B4FCC /* SortingTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B754702175D907A007B4FCC /* SortingTest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +40,17 @@
 		8B6E1673175C9FA70017F790 /* SDJSONPrettyPrint-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDJSONPrettyPrint-Prefix.pch"; sourceTree = "<group>"; };
 		8B6E1674175C9FA70017F790 /* SDJSONPrettyPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDJSONPrettyPrint.h; sourceTree = "<group>"; };
 		8B6E1676175C9FA70017F790 /* SDJSONPrettyPrint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDJSONPrettyPrint.m; sourceTree = "<group>"; };
+		8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDJSONPrettyPrintTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6E1683175CD99C0017F790 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8B6E1685175CD99C0017F790 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8B6E168A175CD99C0017F790 /* SDJSONPrettyPrintTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDJSONPrettyPrintTests-Info.plist"; sourceTree = "<group>"; };
+		8B6E168C175CD99C0017F790 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B6E168E175CD99C0017F790 /* SDJSONPrettyPrintTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDJSONPrettyPrintTests.h; sourceTree = "<group>"; };
+		8B6E168F175CD99C0017F790 /* SDJSONPrettyPrintTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDJSONPrettyPrintTests.m; sourceTree = "<group>"; };
+		8B6E1691175CD99C0017F790 /* SDJSONPrettyPrintTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDJSONPrettyPrintTests-Prefix.pch"; sourceTree = "<group>"; };
+		8B6E1696175CDF460017F790 /* NestedTest.json */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = text.json; path = NestedTest.json; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		8B754700175D8C33007B4FCC /* UnicodeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UnicodeTest.json; sourceTree = "<group>"; };
+		8B754702175D907A007B4FCC /* SortingTest.json */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = text.json; path = SortingTest.json; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +62,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B6E167E175CD99C0017F790 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6E1684175CD99C0017F790 /* SenTestingKit.framework in Frameworks */,
+				8B6E1686175CD99C0017F790 /* UIKit.framework in Frameworks */,
+				8B6E1687175CD99C0017F790 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6E1671175C9FA70017F790 /* SDJSONPrettyPrint */,
+				8B6E1688175CD99C0017F790 /* SDJSONPrettyPrintTests */,
 				8B6E166E175C9FA70017F790 /* Frameworks */,
 				8B6E166D175C9FA70017F790 /* Products */,
 			);
@@ -58,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6E166C175C9FA70017F790 /* libSDJSONPrettyPrint.a */,
+				8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				8B6E166F175C9FA70017F790 /* Foundation.framework */,
+				8B6E1683175CD99C0017F790 /* SenTestingKit.framework */,
+				8B6E1685175CD99C0017F790 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,6 +118,29 @@
 			isa = PBXGroup;
 			children = (
 				8B6E1673175C9FA70017F790 /* SDJSONPrettyPrint-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B6E1688175CD99C0017F790 /* SDJSONPrettyPrintTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B6E168E175CD99C0017F790 /* SDJSONPrettyPrintTests.h */,
+				8B6E168F175CD99C0017F790 /* SDJSONPrettyPrintTests.m */,
+				8B6E1689175CD99C0017F790 /* Supporting Files */,
+			);
+			path = SDJSONPrettyPrintTests;
+			sourceTree = "<group>";
+		};
+		8B6E1689175CD99C0017F790 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B6E168A175CD99C0017F790 /* SDJSONPrettyPrintTests-Info.plist */,
+				8B6E168B175CD99C0017F790 /* InfoPlist.strings */,
+				8B6E1691175CD99C0017F790 /* SDJSONPrettyPrintTests-Prefix.pch */,
+				8B6E1696175CDF460017F790 /* NestedTest.json */,
+				8B754702175D907A007B4FCC /* SortingTest.json */,
+				8B754700175D8C33007B4FCC /* UnicodeTest.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +165,24 @@
 			productReference = 8B6E166C175C9FA70017F790 /* libSDJSONPrettyPrint.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		8B6E1681175CD99C0017F790 /* SDJSONPrettyPrintTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B6E1692175CD99C0017F790 /* Build configuration list for PBXNativeTarget "SDJSONPrettyPrintTests" */;
+			buildPhases = (
+				8B6E167D175CD99C0017F790 /* Sources */,
+				8B6E167E175CD99C0017F790 /* Frameworks */,
+				8B6E167F175CD99C0017F790 /* Resources */,
+				8B6E1680175CD99C0017F790 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDJSONPrettyPrintTests;
+			productName = SDJSONPrettyPrintTests;
+			productReference = 8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,9 +205,40 @@
 			projectRoot = "";
 			targets = (
 				8B6E166B175C9FA70017F790 /* SDJSONPrettyPrint */,
+				8B6E1681175CD99C0017F790 /* SDJSONPrettyPrintTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B6E167F175CD99C0017F790 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6E168D175CD99C0017F790 /* InfoPlist.strings in Resources */,
+				8B6E1697175CDF460017F790 /* NestedTest.json in Resources */,
+				8B754701175D8C33007B4FCC /* UnicodeTest.json in Resources */,
+				8B754703175D907A007B4FCC /* SortingTest.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B6E1680175CD99C0017F790 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B6E1668175C9FA70017F790 /* Sources */ = {
@@ -143,7 +249,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B6E167D175CD99C0017F790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6E1690175CD99C0017F790 /* SDJSONPrettyPrintTests.m in Sources */,
+				8B6E1695175CDAAD0017F790 /* SDJSONPrettyPrint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B6E168B175CD99C0017F790 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B6E168C175CD99C0017F790 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8B6E1678175C9FA70017F790 /* Debug */ = {
@@ -223,6 +349,36 @@
 			};
 			name = Release;
 		};
+		8B6E1693175CD99C0017F790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Prefix.pch";
+				INFOPLIST_FILE = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		8B6E1694175CD99C0017F790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Prefix.pch";
+				INFOPLIST_FILE = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -242,6 +398,16 @@
 				8B6E167C175C9FA70017F790 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B6E1692175CD99C0017F790 /* Build configuration list for PBXNativeTarget "SDJSONPrettyPrintTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B6E1693175CD99C0017F790 /* Debug */,
+				8B6E1694175CD99C0017F790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
