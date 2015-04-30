@@ -31,7 +31,7 @@
     NSArray *object = @[@1, @5, @4, @2];
     
     NSString *output = [SDJSONPrettyPrint stringFromJSONObject: object];
-    STAssertEqualObjects(expected, output, nil);
+    XCTAssertEqualObjects(expected, output);
 }
 
 - (void) testBasicObject
@@ -40,7 +40,7 @@
     NSDictionary *object = @{ @"a": @1, @"b": @YES };
     
     NSString *output = [SDJSONPrettyPrint stringFromJSONObject: object];
-    STAssertEqualObjects(expected, output, nil);
+    XCTAssertEqualObjects(expected, output);
 }
 
 - (void) testNested
@@ -53,6 +53,11 @@
 {
     NSString *fileName = @"UnicodeTest";
     [self runFileTest: fileName];
+    
+    NSString *expected = @"[\"Привет\"]";
+    NSArray *object = @[@"Привет"];
+    NSString *output = [SDJSONPrettyPrint stringFromJSONObject: object];
+    XCTAssertEqualObjects(expected, output);
 }
 
 - (void) testSorting
@@ -68,7 +73,7 @@
     NSDictionary *object = [NSJSONSerialization JSONObjectWithData: [expected dataUsingEncoding: NSUTF8StringEncoding] options: 0 error: NULL];
     
     NSString *output = [SDJSONPrettyPrint stringFromJSONObject: object];
-    STAssertEqualObjects(expected, output, nil);
+    XCTAssertEqualObjects(expected, output);
 }
 
 @end

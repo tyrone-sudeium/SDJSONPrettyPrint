@@ -10,7 +10,6 @@
 		8B6E1670175C9FA70017F790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E166F175C9FA70017F790 /* Foundation.framework */; };
 		8B6E1675175C9FA70017F790 /* SDJSONPrettyPrint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B6E1674175C9FA70017F790 /* SDJSONPrettyPrint.h */; };
 		8B6E1677175C9FA70017F790 /* SDJSONPrettyPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E1676175C9FA70017F790 /* SDJSONPrettyPrint.m */; };
-		8B6E1684175CD99C0017F790 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E1683175CD99C0017F790 /* SenTestingKit.framework */; };
 		8B6E1686175CD99C0017F790 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E1685175CD99C0017F790 /* UIKit.framework */; };
 		8B6E1687175CD99C0017F790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6E166F175C9FA70017F790 /* Foundation.framework */; };
 		8B6E168D175CD99C0017F790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B6E168B175CD99C0017F790 /* InfoPlist.strings */; };
@@ -40,8 +39,7 @@
 		8B6E1673175C9FA70017F790 /* SDJSONPrettyPrint-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDJSONPrettyPrint-Prefix.pch"; sourceTree = "<group>"; };
 		8B6E1674175C9FA70017F790 /* SDJSONPrettyPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDJSONPrettyPrint.h; sourceTree = "<group>"; };
 		8B6E1676175C9FA70017F790 /* SDJSONPrettyPrint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDJSONPrettyPrint.m; sourceTree = "<group>"; };
-		8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDJSONPrettyPrintTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B6E1683175CD99C0017F790 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDJSONPrettyPrintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6E1685175CD99C0017F790 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8B6E168A175CD99C0017F790 /* SDJSONPrettyPrintTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDJSONPrettyPrintTests-Info.plist"; sourceTree = "<group>"; };
 		8B6E168C175CD99C0017F790 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6E1684175CD99C0017F790 /* SenTestingKit.framework in Frameworks */,
 				8B6E1686175CD99C0017F790 /* UIKit.framework in Frameworks */,
 				8B6E1687175CD99C0017F790 /* Foundation.framework in Frameworks */,
 			);
@@ -89,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6E166C175C9FA70017F790 /* libSDJSONPrettyPrint.a */,
-				8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */,
+				8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				8B6E166F175C9FA70017F790 /* Foundation.framework */,
-				8B6E1683175CD99C0017F790 /* SenTestingKit.framework */,
 				8B6E1685175CD99C0017F790 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -180,8 +176,8 @@
 			);
 			name = SDJSONPrettyPrintTests;
 			productName = SDJSONPrettyPrintTests;
-			productReference = 8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 8B6E1682175CD99C0017F790 /* SDJSONPrettyPrintTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -189,6 +185,7 @@
 		8B6E1664175C9FA70017F790 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0630;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Sudeium;
 			};
@@ -355,12 +352,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Prefix.pch";
 				INFOPLIST_FILE = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -370,12 +367,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Prefix.pch";
 				INFOPLIST_FILE = "SDJSONPrettyPrintTests/SDJSONPrettyPrintTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

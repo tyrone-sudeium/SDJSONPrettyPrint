@@ -77,9 +77,9 @@ static NSString* SDJSONStringTranslation(NSString* string)
 {
     NSMutableData *outData = [NSMutableData dataWithCapacity: string.length+2];
     [outData appendBytes: "\"" length: 1];
-    const char *stringData = [string UTF8String];
+    const uint8_t *stringData = (const uint8_t*) [string UTF8String];
     for (int i = 0; i < [string lengthOfBytesUsingEncoding: NSUTF8StringEncoding]; i++) {
-        char c = stringData[i];
+        uint8_t c = stringData[i];
         char hexCode[7];
         const char* escaped = nil;
         switch (c) {
@@ -91,7 +91,7 @@ static NSString* SDJSONStringTranslation(NSString* string)
             case '\b': escaped = "\\b"; break;
             case '\f': escaped = "\\f"; break;
             default:
-                if (c < 32) {
+                if (c < 32 || c == 127) {
                     snprintf(hexCode, 7, "\\u%04x", c);
                     escaped = hexCode;
                 }
